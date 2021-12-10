@@ -17,13 +17,13 @@ public class Phonebook {
             List<String> phoneNumbers = phoneBook.get(surname);
             if (!phoneNumbers.contains(phoneNumber)) {
                 phoneNumbers.add(phoneNumber);
-                System.out.printf("Телефон номер %s добавлен для фамилии %n", phoneNumber, surname);
+                System.out.printf("Телефон номер %s добавлен для фамилии %s", phoneNumber, surname);
             } else {
-                System.out.printf("Телефон номер %s уже существует для фамилии %n", phoneNumber, surname);
+                System.out.printf("Телефон номер %s уже существует для фамилии %s", phoneNumber, surname);
             }
         } else {
             phoneBook.put(surname, new ArrayList<>(Arrays.asList(phoneNumber)));
-            System.out.printf("Номер %s добавлен для фамилии %n", phoneNumber, surname);
+            System.out.printf("Номер %s добавлен для фамилии %s", phoneNumber, surname);
         }
     }
 
@@ -32,7 +32,7 @@ public class Phonebook {
             System.out.printf("В телефонном справочнике есть запись для фамилии %s ", surname);
             return phoneBook.get(surname);
         } else {
-            System.out.printf("В телефонном справочнике нет записи для фамилии %n", surname);
+            System.out.printf("В телефонном справочнике нет записи для фамилии %s", surname);
             return new ArrayList<>();
         }
     }
