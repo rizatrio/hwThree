@@ -14,16 +14,15 @@ public class Main {
                 "Moskva", "Kipr", "Sidney", "Bishkek", "Brazilia", "Moskva",
                 "Nur-Sultan", "London", "Kipr", "Praga", "London", "Moskva"));
 
-        Set<String> uniqueList = new HashSet<>(list);
+        Set<String> uniqueSet = new HashSet<>(list);
+        System.out.println(list);
+        System.out.println(uniqueSet);
 
-        System.out.println("Первоначальный массив: " + list);
-        System.out.println("Уникальный массив: " + uniqueList);
-        System.out.println("Частота слов: ");
-        Map<String, Integer> wordsCount = new HashMap<>();
-        for (String word: list) {
-            wordsCount.put(word, wordsCount.getOrDefault(word, 1));
+        Map<String, Integer> map = new HashMap<>();
+        for (String  word : uniqueSet) {
+            map.put(word, Collections.frequency(list, word));
         }
-        System.out.println(wordsCount);
+        System.out.println(map);
 
         /*2. Написать простой класс ТелефонныйСправочник, который хранит в себе список фамилий и телефонных номеров.
         В этот телефонный справочник с помощью метода add() можно добавлять записи. С помощью метода get() искать номер
